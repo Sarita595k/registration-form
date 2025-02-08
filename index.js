@@ -7,7 +7,7 @@ const { getRegistrationFrom, getUsersList, postRegistration, login, postLogin } 
 const app = express()
 
 app.set('view engine', 'ejs')
-app.set('views', path.join(__dirname, 'src', 'mvc', 'views'))
+app.set('views', path.join(__dirname, 'src', 'mvc', 'views', 'pages'))
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
@@ -23,6 +23,8 @@ app.post('/login', postLogin)
 
 // userlist route 
 app.get('/usersList', getUsersList)
+
+
 app.listen(3000, () => {
     console.log('server is running')
 })

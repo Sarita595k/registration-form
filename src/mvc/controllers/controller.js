@@ -24,11 +24,11 @@ const login = (req, res) => {
 const postLogin = (req, res) => {
     // let errors = []
     let { email, newPassword } = req.body
-    const loginResponse = checkUser(email, newPassword)
+    const loginResponse = checkUser({ email, newPassword })
     if (!loginResponse) {
         return res.render('login', { error: "invalid email and password" })
     }
-    res.render('loginDashboard', { userIs: loginResponse })
+    res.render('dashboard', { userIs: loginResponse })
 }
 module.exports = {
     getRegistrationFrom, getUsersList, postRegistration, login, postLogin

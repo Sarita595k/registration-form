@@ -11,9 +11,9 @@ const addUsers = (user) => {
     return newUser
 }
 
-const checkUser = (email, newPassword) => {
-    console.log(users)
+const checkUser = (details) => {
+    console.log(details)
     // console.log(email, password)
-    return users.find(user => user.email === email && user.newPassword === newPassword) || null
+    return users.find(user => user.email === details.email && user.newPassword === details.newPassword) || null
 }
 module.exports = { getUsers, addUsers, checkUser }
